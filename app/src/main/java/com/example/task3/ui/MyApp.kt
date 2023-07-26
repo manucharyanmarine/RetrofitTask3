@@ -1,4 +1,4 @@
-package com.example.task3
+package com.example.task3.ui
 
 import android.app.Application
 import com.example.task3.di.apiModule

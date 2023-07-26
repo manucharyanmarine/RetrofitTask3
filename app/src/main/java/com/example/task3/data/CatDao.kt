@@ -13,5 +13,5 @@ interface CatDao {
     fun getCatList(): Flow<List<Cat>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun addCat(cat: Cat)
+    suspend fun addCat(cat: List<Cat>)
 }

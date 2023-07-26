@@ -1,4 +1,4 @@
-package com.example.task3
+package com.example.task3.data
 
 sealed class Status<out T> {
     data class Success<T>(val data: T) : Status<T>()

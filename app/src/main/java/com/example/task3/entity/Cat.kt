@@ -8,8 +8,6 @@ data class Cat(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
     val breed: String,
-    val coat: String,
-    val country: String,
     val origin: String,
     val pattern: String
 )

@@ -8,9 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.task3.databinding.ItemRvBinding
 import com.example.task3.entity.Cat
 
-
 class CatAdapter :
-    ListAdapter<Cat, CatAdapter.CatViewHolder>(CatDiffutil()) {
+    ListAdapter<Cat, CatAdapter.CatViewHolder>(CatDiffutils()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CatViewHolder {
         return CatViewHolder(
@@ -26,7 +25,7 @@ class CatAdapter :
         holder.bind(getItem(position))
     }
 
-    inner class CatViewHolder(val binding: ItemRvBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class CatViewHolder(private val binding: ItemRvBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(cat: Cat) {
             with(binding) {
                 breed.text = cat.breed
@@ -37,7 +36,7 @@ class CatAdapter :
     }
 }
 
-class CatDiffutil : DiffUtil.ItemCallback<Cat>() {
+class CatDiffutils : DiffUtil.ItemCallback<Cat>() {
     override fun areItemsTheSame(oldItem: Cat, newItem: Cat): Boolean = oldItem == newItem
 
     override fun areContentsTheSame(oldItem: Cat, newItem: Cat): Boolean = oldItem.id == newItem.id
